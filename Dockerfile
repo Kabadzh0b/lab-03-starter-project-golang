@@ -18,4 +18,12 @@ COPY --from=build /project/templates templates
 
 COPY --from=build /project/build/fizzbuzz fizzbuzz
 
+FROM scratch
+
+WORKDIR /project
+
+COPY --from=build /project/templates templates
+
+COPY --from=build /project/build/fizzbuzz fizzbuzz
+
 CMD ["./fizzbuzz", "serve"]
