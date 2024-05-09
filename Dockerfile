@@ -18,7 +18,7 @@ COPY --from=build /project/templates templates
 
 COPY --from=build /project/build/fizzbuzz fizzbuzz
 
-FROM scratch
+FROM gcr.io/distroless/static-debian11
 
 WORKDIR /project
 
